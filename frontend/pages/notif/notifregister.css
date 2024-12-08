@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+
+
+body {
+    font-family: Monteserrat;
+    color: #000000;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+  }
+
+  /* Atur posisi logo di pojok kiri atas */
+.logo {
+    position: absolute;
+    top: 10px; /* Jarak dari atas */
+    left: 10px; /* Jarak dari kiri */
+}
+
+.logo img {
+    width: 120px; /* Ukuran logo */
+    height: auto; /* Menjaga proporsi logo */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Bayangan gambar */
+}
+
+.text-overlay {
+    position: absolute; /* Posisi absolut terhadap container */
+    top: 10%; /* Posisikan di tengah secara vertikal */
+    left: 50%; /* Posisikan di tengah secara horizontal */
+    transform: translate(-50%, -50%); /* Pusatkan teks secara sempurna */
+    color: rgb(0, 0, 0); /* Warna teks */
+    font-size: 24px; /* Ukuran teks */
+    font-family: 'Montserrat'; /* Jenis font */
+    text-align: center; /* Teks rata tengah */
+    white-space: nowrap; /* Mencegah teks berpindah ke baris baru */
+    padding: 10px; /* Jarak dalam teks */
+}
+  
+  .notification {
+    position: absolute;
+    top: 74px; /* Jarak dari atas */
+    background-color: #3DD598B2;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 1350px;
+    height: 450px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .notification-content h2 {
+    font-size: 18px;
+    color: #000000;
+    font-family: Monteserrat;
+  }
+  
+  
+  .illustration {
+    width: 250px;
+    margin: 10px 0;
+    position: absolute;
+    top: 110px; /* Jarak dari atas */
+    left: 560px; /* Jarak dari kiri */
+  }
+  
+  button {
+    background-color: #ffffff;
+    color: #3DD598B2;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 100px;
+    cursor: pointer;
+    position: absolute;
+    top: 400px; /* Jarak dari atas */
+    left: 560px; /* Jarak dari kiri */
+    transition: all 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #818181;
+  }
+  
