@@ -3,25 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header dengan Sidebar</title>
+    <title>Sidebar dengan Overlay</title>
     <link rel="stylesheet" href="header.css">
 </head>
 <body>
     <header class="header">
+        <!-- Tombol Menu -->
         <div class="menu-toggle" id="menuToggle">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
+
+        <input type="text" class="search-bar" aria-label="Search">
+
+        <button class="createads-button">
+            <img src="createadbutton.png" alt="Button Icon">
+        </button>
+
     </header>
 
+    <!-- Sidebar -->
     <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="close-btn" id="closeBtn">&times;</a>
-        <a href="#">Beranda</a>
-        <a href="#">Tentang</a>
-        <a href="#">Layanan</a>
-        <a href="#">Kontak</a>
+        <img src="logorusa.png" alt="Sidebar Image" class="sidebar-image">
+
+            <!-- Profil pengguna -->
+        <div class="profile-section">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+            <div class="profile-info">
+                <p class="profile-name">Nama Pengguna</p>
+                <p class="profile-email">email@example.com</p>
+            </div>
+        </div>
+        
+        <div class="rtt-section">
+            <!-- Menu dengan gambar -->
+                <a href="#">
+                    <img src="rumahan.png" alt="Home Icon" class="menu-icon">
+                    Dashboard
+                </a>
+                <a href="#">
+                    <img src="tukcourse.png" alt="Service Icon" class="menu-icon">
+                    My Course
+                </a>
+                <a href="#">
+                    <img src="tukchat.png" alt="Contact Icon" class="menu-icon">
+                    Chat
+                </a>
+        </div>
+
+        <div class="st-section">
+            <a href="#">
+                <img src="Settings.png" alt="Contact Icon" class="menu-icon">
+                Settings
+            </a>
+
+            <a href="#">
+                <img src="tukhelpcenter.png" alt="Contact Icon" class="menu-icon">
+                Help Center
+            </a>
+        </div>
+
+        <div class="logout-section">
+            <a href="#">
+                <img src="tuklogot.png" alt="Contact Icon" class="menu-icon">
+                Logout Account
+            </a>
+        </div>
     </div>
+
+    <!-- Overlay -->
+    <div id="sidebarOverlay"></div>
 
     <div class="content">
         <h1>Selamat Datang</h1>
@@ -29,5 +81,5 @@
     </div>
 
     <script src="header.js"></script>
-    </body>
-</html>    
+</body>
+</html>

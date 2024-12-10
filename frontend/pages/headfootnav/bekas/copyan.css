@@ -1,35 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
-    font-family: Montserrat;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
 }
-
 .header {
-    position: relative; /* Pastikan elemen induk memiliki posisi relatif */
     background-color: #ffffff;
     border-bottom: 1px solid #000000; /* Tambahan border bottom */
-    justify-content: space-between; /* Memisahkan elemen di kiri dan kanan */
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
-
 .logo {
     font-size: 24px;
     font-weight: bold;
 }
-
 .menu-toggle {
     cursor: pointer;
     color:#000000;
@@ -37,61 +30,14 @@ body {
     flex-direction: column;
     width: 30px;
 }
-
 .bar {
-    width: 20px;
-    height: 2px;
+    width: 25px;
+    height: 3px;
     background-color: rgb(0, 0, 0);
     margin: 3px 0;
     transition: 0.4s;
 }
-
-.search-bar {
-    position: absolute;
-    left: 80px; /* Geser dari tepi kanan header */
-    top: 50%; /* Pusatkan secara vertikal */
-    transform: translateY(-50%); /* Koreksi agar sejajar sempurna */
-    width: 200px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    margin-right: auto; /* Geser search bar ke kanan */
-    background-image: url('search.png'); /* Nama file gambar */
-    background-repeat: no-repeat;
-    background-size: 20px 20px; /* Ukuran gambar */
-    background-position: 10px center; /* Posisi gambar */
-    padding-left: 40px; /* Tambahkan jarak teks dari gambar */
-    transition: width 0.3s;
-}
-
-.search-bar:focus {
-    width: 250px; /* Memperluas lebar saat fokus */
-    outline: none;
-    border-color: #000;
-}
-
-.createads-button {
-    background: none; /* Hapus background default */
-    border: none; /* Hapus border default */
-    cursor: pointer; /* Tambahkan efek pointer */
-    padding: 0; /* Hapus padding default */
-    margin-left: 10px; /* Beri jarak dengan elemen lainnya */
-    display: flex;
-    align-items: center;
-}
-
-.createads-button img {
-    width: 30px; /* Atur lebar gambar */
-    height: 30px; /* Atur tinggi gambar */
-    object-fit: contain; /* Pastikan gambar tidak terdistorsi */
-}
-
-.createads-button:hover img {
-    opacity: 0.8; /* Tambahkan efek hover */
-}
-
-
+/* Sidebar */
 .sidebar {
     height: 100%;
     width: 0;
@@ -113,8 +59,30 @@ body {
     gap: 15px; /* Tambahkan jarak antar item */
 }
 
+
 .sidebar.active {
     width: 350px; /* Tampil ketika aktif */
+}
+
+/* Link Sidebar */
+.sidebar a {
+    display: flex; /* Flexbox untuk menyusun gambar dan teks */
+    align-items: center; /* Rata tengah secara vertikal */
+    padding: 10px 15px; /* Jarak dalam */
+    padding-top: -100px;
+    margin-right: 10px; /* Jarak antara gambar dan teks */
+    margin-left: 30px; /* Jarak antara gambar dan teks */
+    text-decoration: none;
+    color: #000000;
+    transition: 0.3s;
+}
+
+/* Gaya untuk ikon gambar */
+.sidebar a .menu-icon {
+    width: 20px; /* Atur ukuran ikon */
+    height: 20px;
+    margin-right: 10px; /* Jarak antara gambar dan teks */
+    object-fit: contain; /* Pastikan gambar tidak terdistorsi */
 }
 
 .sidebar img.sidebar-image {
@@ -125,6 +93,11 @@ body {
     margin: 0 auto; /* Pusatkan gambar secara horizontal */
     position: relative; /* Biarkan posisi relatif terhadap sidebar */
     top: 5px; /* Beri jarak dari atas sidebar */
+}
+
+
+.sidebar a:hover {
+    color: #f1f1f1;
 }
 
 /* Overlay */
@@ -146,7 +119,7 @@ body {
 /* Profil */
 .profile-section {
     display: flex;
-    align-items: left; /* Rata tengah secara vertikal */
+    align-items: center; /* Rata tengah secara vertikal */
     padding: 10px;
     margin-bottom: 20px; /* Tambahkan jarak di bawah profil */
     border-bottom: 1px solid #ffffff; /* Opsional: garis bawah sebagai pemisah */
@@ -158,10 +131,9 @@ body {
     height: 50px;
     border-radius: 50%; /* Bentuk lingkaran */
     object-fit: cover; /* Sesuaikan ukuran gambar */
-    margin-right: -80px; /* Jarak ke nama dan email */
+    margin-right: -100px; /* Jarak ke nama dan email */
     position: relative; /* Pastikan elemen bisa dipindahkan relatif */
     margin-left: 20px; /* Jarak ke nama dan email */
-
 }
 
 /* Info Profil */
@@ -183,87 +155,25 @@ body {
     margin: 0;
 }
 
-/* 3 item */
-.rtt-section {
-    display: flex;
-    flex-direction: column; /* Susun elemen secara vertikal */
-    align-items: right; /* Rata tengah secara vertikal */
-    padding: 10px;
-    margin-top: -25px;
-    margin-bottom: 20px; /* Tambahkan jarak di bawah profil */
-    margin-left: 45px; /* Geser seluruh section ke kanan */
-    gap: 10px;
-}
-
-.rtt-section a {
-    display: flex; /* Flexbox untuk menyusun gambar dan teks */
-    align-items: center; /* Rata tengah secara vertikal */
-    padding: 10px 15px; /* Jarak dalam */
-    margin-right: 10px; /* Jarak antara gambar dan teks */
-    margin-left: -25px; /* Jarak antara gambar dan teks */
-    margin-top: -10px;
-    text-decoration: none;
-    color: #000000;
-    transition: 0.3s;
-}
-
-/* Gaya untuk ikon gambar */
-.rtt-section a .menu-icon {
-    width: 20px; /* Atur ukuran ikon */
-    height: 20px;
-    margin-right: 10px; /* Jarak antara gambar dan teks */
-    object-fit: contain; /* Pastikan gambar tidak terdistorsi */
-}
-
-.rtt-section a:hover {
-    color: #f1f1f1;
-}
-
-/* 2 item */
-.st-section {
-    display: flex;
-    flex-direction: column; /* Susun elemen secara vertikal */
-    align-items: right; /* Rata tengah secara vertikal */
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px; /* Tambahkan jarak di bawah profil */
-    margin-left: 45px; /* Geser seluruh section ke kanan */
-    gap: 10px;
-}
-
-.st-section a {
-    display: flex; /* Flexbox untuk menyusun gambar dan teks */
-    align-items: center; /* Rata tengah secara vertikal */
-    padding: 10px 15px; /* Jarak dalam */
-    margin-right: 10px; /* Jarak antara gambar dan teks */
-    margin-left: -25px; /* Jarak antara gambar dan teks */
-    margin-top: -10px;
-    text-decoration: none;
-    color: #000000;
-    transition: 0.3s;
-}
-
-/* Gaya untuk ikon gambar */
-.st-section a .menu-icon {
-    width: 20px; /* Atur ukuran ikon */
-    height: 20px;
-    margin-right: 10px; /* Jarak antara gambar dan teks */
-    object-fit: contain; /* Pastikan gambar tidak terdistorsi */
-}
-
-.st-section a:hover {
-    color: #f1f1f1;
-}
-
-/* 1 item */
+/* Profil */
 .logout-section {
     display: flex;
-    flex-direction: column; /* Susun elemen secara vertikal */
     align-items: right; /* Rata tengah secara vertikal */
     padding: 10px;
-    margin-bottom: 30px; /* Tambahkan jarak di bawah profil */
-    margin-top: -40px;
+    margin-bottom: 20px; /* Tambahkan jarak di bawah profil */
     border-top: 1px solid #ffffff; /* Opsional: garis bawah sebagai pemisah */
+}
+
+/* Foto Profil */
+.logout-section .untuklogot {
+    display: flex; /* Flexbox untuk menyusun gambar dan teks */
+    align-items: center; /* Rata tengah secara vertikal */
+    padding: 10px 15px; /* Jarak dalam */
+    margin-right: 10px; /* Jarak antara gambar dan teks */
+    margin-left: 30px; /* Jarak antara gambar dan teks */
+    text-decoration: none;
+    color: #000000;
+    transition: 0.3s;
 }
 
 .logout-section a {
@@ -271,8 +181,8 @@ body {
     align-items: center; /* Rata tengah secara vertikal */
     padding: 10px 15px; /* Jarak dalam */
     margin-right: 10px; /* Jarak antara gambar dan teks */
-    margin-left: 20px; /* Jarak antara gambar dan teks */
-    margin-top: 10px;
+    margin-left: -25px; /* Jarak antara gambar dan teks */
+    margin-top: -10px;
     text-decoration: none;
     color: #000000;
     transition: 0.3s;
@@ -288,4 +198,9 @@ body {
 
 .logout-section a:hover {
     color: #f1f1f1;
+}
+
+.content {
+    margin-top: 60px;
+    padding: 20px;
 }
